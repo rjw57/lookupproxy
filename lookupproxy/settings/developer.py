@@ -46,12 +46,14 @@ STATIC_URL = '/static/'
 
 # These OAuth2 settings are correct only if the development server has been launched via
 # docker-compose.
-LOOKUP_API_OAUTH2_TOKEN_URL = 'http://hydra:4444/oauth2/token'
-LOOKUP_API_OAUTH2_INTROSPECT_URL = 'http://hydra:4444/oauth2/introspect'
-LOOKUP_API_OAUTH2_CLIENT_ID = 'hydraroot'
-LOOKUP_API_OAUTH2_CLIENT_SECRET = 'secret'
+LOOKUP_API_OAUTH2_TOKEN_URL = (
+    'https://experimental-oauth2.gcloud.automation.uis.cam.ac.uk/oauth2/token')
+LOOKUP_API_OAUTH2_INTROSPECT_URL = (
+    'https://experimental-oauth2.gcloud.automation.uis.cam.ac.uk/oauth2/introspect')
+LOOKUP_API_OAUTH2_CLIENT_ID = 'lookupproxy-server-local'
+LOOKUP_API_OAUTH2_CLIENT_SECRET = 'super-secret'
 LOOKUP_API_OAUTH2_INTROSPECT_SCOPES = ['hydra.introspect']
 
 # Set the OAuth2 authorisation endpoint
 SWAGGER_SETTINGS['SECURITY_DEFINITIONS']['oauth2']['authorizationUrl'] = (  # noqa: F405
-    'http://localhost:4444/oauth2/auth')
+    'https://experimental-oauth2.gcloud.automation.uis.cam.ac.uk/oauth2/auth')
